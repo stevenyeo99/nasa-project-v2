@@ -38,7 +38,7 @@ async function httpAddNewLaunch(req, res) {
         });
     }
 
-    return res.status(201).json(newLaunch);
+    return res.status(201).json(launch);
 }
 
 async function httpAbortLaunch(req, res) {
