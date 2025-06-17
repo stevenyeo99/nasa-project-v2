@@ -25,7 +25,12 @@ async function httpAddNewLaunch(req, res) {
         });
     }
 
-    const newLaunch = await addNewLaunch(launch);
+    try {
+        const newLaunch = await addNewLaunch(launch);
+    } catch (err) {
+        newLaunch = null; 
+    }
+    
     if (!newLaunch) {
         return res.status(400).json({
             error: 'Planet not found'
